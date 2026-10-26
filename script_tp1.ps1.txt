@@ -1,0 +1,24 @@
+# ==========================================
+# Trabajo Práctico 1 - PowerShell
+# ==========================================
+
+Write-Host "==========================================" -ForegroundColor Green
+Write-Host " 1. VERSIÓN DE POWERSHELL                 " -ForegroundColor Green
+Write-Host "==========================================" -ForegroundColor Green
+$PSVersionTable.PSVersion
+
+Write-Host "`n==========================================" -ForegroundColor Green
+Write-Host " 2. CONFIGURACIÓN DE PERMISIVIDAD (POLICY)" -ForegroundColor Green
+Write-Host "==========================================" -ForegroundColor Green
+Get-ExecutionPolicy -List
+
+Write-Host "`n==========================================" -ForegroundColor Green
+Write-Host " 3. EDICIÓN DEL SISTEMA OPERATIVO         " -ForegroundColor Green
+Write-Host "==========================================" -ForegroundColor Green
+Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, OSArchitecture, CSName
+
+Write-Host "`n==========================================" -ForegroundColor Green
+Write-Host " 4. INFORMACIÓN COMPLETA DE LA PC (CMD)   " -ForegroundColor Green
+Write-Host "==========================================" -ForegroundColor Green
+# Comando del símbolo del sistema (CMD) para obtener toda la info de la PC
+cmd /c systeminfo
